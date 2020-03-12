@@ -1,9 +1,10 @@
 import React, { useState, useCallback, useRef } from 'react';
 import produce from 'immer'
 import './App.css';
+import Rules from './Rules'
 
-const numRows = 30
-const numCols = 30
+const numRows = 25
+const numCols = 40
 const colors = ["#DEF335", "#52903F", "#2E5134", "#2E5134", "#5F412F"]
 
 const myNeighbors = [
@@ -74,38 +75,51 @@ const App = () => {
         }
       })
     })
-    setTimeout(runSimulation, 1000)
+    setTimeout(runSimulation, 500)
   }, [])
 
   return (
-    <>
-      <button onClick={() => {
-        setRunning(!running)
-        if (!running) {
-          runningRef.current = true
-          runSimulation()
-        }
-      }}>
-        {running ? "stop" : "start"}
-      </button>
+    <div className="container">
+      <h1>Game of Life</h1>
+      <Rules/>
+      <div className="btn">
+        <button 
+          onClick={() => {
+            setRunning(!running)
+            if (!running) {
+              runningRef.current = true
+              runSimulation()
+            }
+          }}
+          style={{backgroundColor: running ? "red" : "#04d804"}}
+        >
+          {running ? "STOP" : "Start"}
+        </button>
 
-      <button onClick={() => {
-        setGrid(generateEmptyGrid())
-      }}>
-        Clear
-      </button>
+        <button 
+          onClick={() => {
+          setGrid(generateEmptyGrid())
+          }}
+          style={{backgroundColor: "lightgrey"}}
+        >
+          Clear
+        </button>
 
-      <button onClick={() => {
-        setGrid(generateRandomGrid())
-      }}>
-        Random
-      </button>
-
+        <button 
+          onClick={() => {
+            setGrid(generateRandomGrid())
+          }}
+          style={{backgroundColor: "pink"}}
+        >
+          Random
+        </button>
+      </div>
       <div
         style={{
           display: "grid",
           gridTemplateColumns: `repeat(${numCols}, 20px)`
         }}
+        className="my-grid"
       >
         {grid.map((row, i) => 
           row.map((col, j) => (
@@ -126,7 +140,7 @@ const App = () => {
           ))
         )}
       </div>
-    </>
+    </div>
   )
 }
 

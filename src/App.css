@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.my-grid {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 0.4rem 1.3rem;
+    border: 1px solid darkgrey;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-right: 0.5rem;
+    margin-bottom: 10px;
+    outline: none;
+    background-color:#04d804;
+    
+  }
+  
+  button:hover {
+    opacity: 0.6;
+    transition: all .1s ease-in-out;
+    transform: scale(1.1);
+  }
+
+  ol {
+      text-align: left;
+      max-width: 750px;
+      margin: 1% auto;
+  }
