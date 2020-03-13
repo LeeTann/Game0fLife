@@ -18,11 +18,8 @@ export default function Rules() {
                 Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.     
                 </li>
             </ol>
-            <p>
-
-
-
-
+            <p style={{fontWeight: "bolder"}}>
+                Choose some connecting cells, hit the start button and see what happens!
             </p>
         </div>
     )
