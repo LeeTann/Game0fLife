@@ -7,7 +7,7 @@ import Rules from './Rules'
 // const numCols = 40
 const numRows = window.innerWidth < 400 ? 15 : 25
 const numCols = window.innerWidth < 400 ? 15 : 40
-console.log("innerwidth", window.innerWidth)
+
 const colors = ["#DEF335", "#52903F", "#2E5134", "#2E5134", "#5F412F"]
 
 const myNeighbors = [

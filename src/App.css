@@ -39,3 +39,9 @@ button {
       max-width: 750px;
       margin: .5rem auto;
   }
+
+  @media (max-width: 400px) {
+    ol {
+      margin-left: 5%;
+    }
+  }
